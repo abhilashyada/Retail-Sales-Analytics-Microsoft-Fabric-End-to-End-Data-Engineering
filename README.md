@@ -29,6 +29,8 @@ The objective is to build a reliable, maintainable, and automated retail sales a
 
 ## Architecture
 
+![Microsoft Fabric End-to-End Retail Sales Architecture](images/fabric_architecture.png)
+
 The solution follows the Medallion Architecture.
 
 ```text
