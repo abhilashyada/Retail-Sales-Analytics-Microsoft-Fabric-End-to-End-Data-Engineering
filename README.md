@@ -4,6 +4,20 @@
 
 ## Project Overview
 
+## Live Microsoft Fabric Project
+
+Explore the actual implementation deployed in Microsoft Fabric.
+
+| Component | Live Access | Source Artifacts |
+|---|---|---|
+| Power BI Dashboard | [View Dashboard](https://app.fabric.microsoft.com/groups/fb0d648b-8518-4023-8545-1c4f4e90d4aa/reports/ff2ad2cb-e0e4-4ba4-ab23-47b6a420467f/c34c2223ff808de3dab2) | [Power BI Report](./powerbi/) |
+| Data Pipeline | [View Pipeline](https://app.fabric.microsoft.com/groups/fb0d648b-8518-4023-8545-1c4f4e90d4aa/pipelines/ec1213d7-fec6-425b-8dfc-618a3383f5b8) | [Pipeline Definition](./pipelines/) |
+| Lakehouse | [View Lakehouse](https://app.fabric.microsoft.com/groups/fb0d648b-8518-4023-8545-1c4f4e90d4aa/lakehouses/1ebd1778-6881-4f56-87cd-f640b52e077b) | [PySpark Notebooks](./notebooks/) |
+| Semantic Model | [View Semantic Model](https://app.fabric.microsoft.com/groups/fb0d648b-8518-4023-8545-1c4f4e90d4aa/modeling/916aaedb-a4e7-4bac-8f50-ad8689342371/modelView) | [TMDL Definitions](./semantic_model/) |
+| Source Datasets | — | [Retail CSV Datasets](./datasets/) |
+
+> **Access Note:** Live Microsoft Fabric links require authentication, appropriate workspace or item permissions, and an active Fabric environment. Source artifacts are available in this repository for independent project reproduction. 
+
 This project demonstrates an end-to-end retail sales data engineering solution built using **Microsoft Fabric**.
 
 The solution processes retail sales, customer, and product data through a **Medallion Architecture (Bronze, Silver, Gold)** and transforms raw CSV files into validated, analytics-ready Delta tables.
