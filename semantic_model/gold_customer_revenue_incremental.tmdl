@@ -1,0 +1,46 @@
+createOrReplace
+
+	table gold_customer_revenue_incremental
+		lineageTag: 88759693-9bbd-40d9-a6fc-7484f91ae24b
+		sourceLineageTag: [dbo].[gold_customer_revenue_incremental]
+
+		column customer_id
+			dataType: string
+			sourceProviderType: varchar(8000)
+			lineageTag: a10e2c05-7aef-493d-b433-765e9c3df389
+			sourceLineageTag: customer_id
+			summarizeBy: none
+			sourceColumn: customer_id
+
+			annotation SummarizationSetBy = Automatic
+
+		column customer_name
+			dataType: string
+			sourceProviderType: varchar(8000)
+			lineageTag: 03169717-8abf-4164-8bb5-400a22047d3f
+			sourceLineageTag: customer_name
+			summarizeBy: none
+			sourceColumn: customer_name
+
+			annotation SummarizationSetBy = Automatic
+
+		column total_revenue
+			dataType: double
+			sourceProviderType: decimal(18, 2)
+			lineageTag: 043ec2bc-1a98-4b20-a24b-103256c93842
+			sourceLineageTag: total_revenue
+			summarizeBy: sum
+			sourceColumn: total_revenue
+
+			annotation SummarizationSetBy = Automatic
+
+			annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+		partition gold_customer_revenue_incremental = entity
+			mode: directLake
+			source
+				entityName: gold_customer_revenue_incremental
+				schemaName: dbo
+				expressionSource: DatabaseQuery
+
+		annotation PBI_ResultType = Table

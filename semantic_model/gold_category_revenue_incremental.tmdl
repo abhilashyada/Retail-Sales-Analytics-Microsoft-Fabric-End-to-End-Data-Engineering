@@ -1,0 +1,36 @@
+createOrReplace
+
+	table gold_category_revenue_incremental
+		lineageTag: 6afd2bf6-dc45-4b6a-8b3d-5f7b4f89310e
+		sourceLineageTag: [dbo].[gold_category_revenue_incremental]
+
+		column category
+			dataType: string
+			sourceProviderType: varchar(8000)
+			lineageTag: 57472918-5db5-4847-9285-29223315d6b1
+			sourceLineageTag: category
+			summarizeBy: none
+			sourceColumn: category
+
+			annotation SummarizationSetBy = Automatic
+
+		column total_revenue
+			dataType: double
+			sourceProviderType: decimal(18, 2)
+			lineageTag: 584d8efa-1523-4005-a6ba-0ae1c302d4dd
+			sourceLineageTag: total_revenue
+			summarizeBy: sum
+			sourceColumn: total_revenue
+
+			annotation SummarizationSetBy = Automatic
+
+			annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+		partition gold_category_revenue_incremental = entity
+			mode: directLake
+			source
+				entityName: gold_category_revenue_incremental
+				schemaName: dbo
+				expressionSource: DatabaseQuery
+
+		annotation PBI_ResultType = Table

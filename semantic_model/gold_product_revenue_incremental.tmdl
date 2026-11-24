@@ -1,0 +1,57 @@
+createOrReplace
+
+	table gold_product_revenue_incremental
+		lineageTag: 983b73e5-5ec4-4a6c-9dde-f655ff70c068
+		sourceLineageTag: [dbo].[gold_product_revenue_incremental]
+
+		column product_id
+			dataType: string
+			sourceProviderType: varchar(8000)
+			lineageTag: 0939ad1a-56ca-4ac4-92f2-81615b411352
+			sourceLineageTag: product_id
+			summarizeBy: none
+			sourceColumn: product_id
+
+			annotation SummarizationSetBy = Automatic
+
+		column product_name
+			dataType: string
+			sourceProviderType: varchar(8000)
+			lineageTag: 298819dc-763d-4637-aaa8-cfcc118790a6
+			sourceLineageTag: product_name
+			summarizeBy: none
+			sourceColumn: product_name
+
+			annotation SummarizationSetBy = Automatic
+
+		column total_quantity
+			dataType: int64
+			formatString: 0
+			sourceProviderType: bigint
+			lineageTag: a8e44fce-b18e-4046-9693-04688501b183
+			sourceLineageTag: total_quantity
+			summarizeBy: sum
+			sourceColumn: total_quantity
+
+			annotation SummarizationSetBy = Automatic
+
+		column total_revenue
+			dataType: double
+			sourceProviderType: decimal(18, 2)
+			lineageTag: f4b7e0d8-cc86-4bc7-9f59-b85c5a7d57cd
+			sourceLineageTag: total_revenue
+			summarizeBy: sum
+			sourceColumn: total_revenue
+
+			annotation SummarizationSetBy = Automatic
+
+			annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+		partition gold_product_revenue_incremental = entity
+			mode: directLake
+			source
+				entityName: gold_product_revenue_incremental
+				schemaName: dbo
+				expressionSource: DatabaseQuery
+
+		annotation PBI_ResultType = Table

@@ -1,0 +1,10 @@
+createOrReplace
+
+	expression DatabaseQuery =
+			let
+			    database = Sql.Database("<FABRIC_SQL_ENDPOINT>", "<DATABASE_ID>")
+			in
+			    database
+		lineageTag: 66f246de-1143-4c74-962b-bebd9f156fae
+
+		annotation PBI_IncludeFutureArtifacts = False
