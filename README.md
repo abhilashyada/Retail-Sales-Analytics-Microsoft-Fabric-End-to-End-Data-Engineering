@@ -267,6 +267,26 @@ These figures represent the validated sample dataset and may change when new dat
 
 ## Power BI Dashboard
 
+### Power BI Dashboard Preview
+
+The dashboard uses a Direct Lake semantic model connected to the Gold layer Delta tables in Microsoft Fabric.
+
+![Retail Sales Analytics Dashboard](./images/powerbi_dashboard.png)
+
+#### Key Business Metrics
+
+| Metric | Value |
+|---|---:|
+| Total Revenue | ₹1,13,277.00 |
+| Total Products | 6 |
+| Total Customers | 8 |
+| Valid Sales Records | 50 |
+| Total Units Sold | 123 |
+
+[View Interactive Power BI Dashboard](https://app.fabric.microsoft.com/groups/fb0d648b-8518-4023-8545-1c4f4e90d4aa/reports/ff2ad2cb-e0e4-4ba4-ab23-47b6a420467f/c34c2223ff808de3dab2)
+
+> The interactive dashboard requires Microsoft Fabric authentication and appropriate access permissions. The screenshot above provides a preview for public visitors.
+
 **Report:** `Sales_Analytics_Incremental_Dashboard`
 
 **Semantic Model:** `sm_incremental_sales_analytics`
